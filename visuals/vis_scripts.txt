@@ -1,0 +1,40 @@
+Correlation_Heatmap.png:
+```
+corr = df.corr(numeric_only=True)
+plt.figure(figsize=(10, 8))
+sns.heatmap(corr, annot=True, fmt=".2f", cmap="coolwarm", square=True)
+plt.title("Correlation Heatmap")
+plt.tight_layout()
+plt.show()
+```
+
+Pairplot_Rent_Predictors:
+```
+subset = df[['RentEstimate', 'Bedroom', 'Bathroom', 'Area', 'PPSq']]
+sns.pairplot(subset, diag_kind='kde', corner=True)
+plt.suptitle('Pairplot of Key Rent Predictors', y=1.02)
+plt.tight_layout()
+plt.show()
+```
+
+Rent_by_Bedroom:
+```
+plt.figure(figsize=(8, 6))
+sns.boxplot(data=df, x='Bedroom', y='RentEstimate')
+plt.title('Rent Estimate by Number of Bedrooms')
+plt.xlabel('Bedrooms')
+plt.ylabel('Rent Estimate ($)')
+plt.tight_layout()
+plt.show()
+```
+
+Rent_vs_Area.png:
+```
+plt.figure(figsize=(8, 6))
+sns.scatterplot(data=df, x='Area', y='RentEstimate', alpha=0.5)
+plt.title('Rent Estimate vs Area')
+plt.xlabel('Area (sq ft)')
+plt.ylabel('Rent Estimate ($)')
+plt.tight_layout()
+plt.show()
+```
